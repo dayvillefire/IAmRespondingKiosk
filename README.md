@@ -53,12 +53,22 @@ To do this, create a new file called '.xsession' in /home/pi (/home/pi/.xsession
     chromium-browser --kiosk --app www.iamresponding.com/v3/Pages/Default.aspx & exec matchbox-window-manager
     
 To exit nano [Ctrl]+[x], hitting [y] when asking if it wants you to save.
+
+(Optional): Change the splash screen by modifying `/usr/share/plymouth/themes/pix/splash.png` to have your preferred logo.
     
 You should now be able to exit and test out your setup by rebooting the machine:
 
     sudo shutdown -r now
     
 When you computer reboots, it should launch into the dashboard for I Am Responding automatically.
+
+## Booting with QEMU
+
+If you need to boot the SD card image with QEMU:
+
+1. Make sure the `qemu-system-arm` package is installed on your system.
+2. Adjust the location of the SD card in the start of the `start-card.sh` script if it's not `/dev/mmcblk0`.
+3. Run `start-card.sh`.
 
 ## References
 ### Section 1
