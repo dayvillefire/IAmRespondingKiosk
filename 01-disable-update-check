@@ -1,0 +1,4 @@
+# Disable check for Chromium updates for Kiosk mode in Chromium 78
+# https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=264399&p=1609004
+
+CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
