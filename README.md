@@ -56,6 +56,10 @@ To do this, create a new file called '.xsession' in /home/pi (/home/pi/.xsession
     
 To exit nano [Ctrl]+[x], hitting [y] when asking if it wants you to save.
 
+Disable version checking (for Chromium 78) by creating `/etc/chromium-browser/customizations/01-disable-update-check`:
+
+    CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+
 (Optional): Change the splash screen by modifying `/usr/share/plymouth/themes/pix/splash.png` to have your preferred logo.
     
 You should now be able to exit and test out your setup by rebooting the machine:
