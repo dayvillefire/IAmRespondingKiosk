@@ -60,6 +60,12 @@ Disable version checking (for Chromium 78) by creating `/etc/chromium-browser/cu
 
     CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
 
+Create `/etc/chromium-browser/policies/managed/no-updates.json` with the following content to disable auto updates:
+
+    {
+        "DeviceAutoUpdateDisabled": "True"
+    }
+
 (Optional): Change the splash screen by modifying `/usr/share/plymouth/themes/pix/splash.png` to have your preferred logo.
     
 You should now be able to exit and test out your setup by rebooting the machine:
