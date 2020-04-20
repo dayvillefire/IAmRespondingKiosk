@@ -3,7 +3,9 @@ Automate and display an IAmResponding dashboard with a RaspberryPi
 
 ## Section 0 - PreReqs & Considerations
 
-The following guide was made with a Raspberry Pi Zero W, which can be bought between $20 and $30 on Amazon. The I Am Responding dashboard is a bit laggy on this equipment when you have scrolling involved, but otherwise does a pretty good job. You will also need an microSD card of 8gigs or more, and the right stuff to connect up your RaspberryPi to a monitor (HDMI Cable)
+The following guide was made with a Raspberry Pi Zero W, which can be bought between $20 and $30 on Amazon. The I Am Responding dashboard is a bit laggy on this equipment when you have scrolling involved, but otherwise does a pretty good job. You will also need an microSD card of 8gigs or more, and the right stuff to connect up your RaspberryPi to a monitor (HDMI Cable). 
+
+**UPDATE**: It is *heavily* suggested that a Raspberry Pi 3 or higher is used. Unfortunately, the Pi Zero W is annoyingly laggy, and does a relatively poor job keeping up with the new javascript-heavy version of the dashboard. 
 
 ## Section 1 - Installing Raspbian on your RaspberryPi
 
@@ -81,6 +83,10 @@ If you need to boot the SD card image with QEMU:
 1. Make sure the `qemu-system-arm` package is installed on your system.
 2. Adjust the location of the SD card in the start of the `start-card.sh` script if it's not `/dev/mmcblk0`.
 3. Run `start-card.sh`.
+
+## Cloning
+
+If you have multiple displays, set up a single Raspberry Pi to work properly, then clone the image with either dd (Linux/Mac) or [USB Image Tool](https://www.alexpage.de/usb-image-tool/) (Windows).
 
 ## References
 ### Section 1
