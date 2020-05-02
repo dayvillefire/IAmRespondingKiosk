@@ -54,6 +54,7 @@ To do this, create a new file called '.xsession' in /home/pi (/home/pi/.xsession
     xset s noblank # don't blank the video device
     sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/Default/Preferences
     sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/'   ~/.config/chromium/Default/Preferences
+    rm -f .config/chromium/SingletonLock
     chromium-browser --kiosk --disable-session-crashed-bubble --check-for-update-interval=0 --noerrors --noerrdialogs --disable-infobars --app https://www.iamresponding.com/v3/Pages/Default.aspx & exec matchbox-window-manager
     
 To exit nano [Ctrl]+[x], hitting [y] when asking if it wants you to save.
