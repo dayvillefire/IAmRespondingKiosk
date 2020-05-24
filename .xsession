@@ -9,4 +9,4 @@ sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/'   ~/.config/chromium/Defa
 
 rm -f .config/chromium/SingletonLock
 
-chromium-browser --kiosk --disable-session-crashed-bubble --check-for-update-interval=0 --noerrors --noerrdialogs --disable-infobars --app https://www.iamresponding.com/v3/Pages/Default.aspx & exec matchbox-window-manager
+chromium-browser --kiosk --disable-session-crashed-bubble --check-for-update-interval=1 --simulate-critical-update --noerrors --noerrdialogs --disable-infobars --app https://www.iamresponding.com/v3/Pages/Default.aspx & exec matchbox-window-manager
