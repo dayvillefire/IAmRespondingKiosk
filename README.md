@@ -3,13 +3,11 @@ Automate and display an IAmResponding dashboard with a RaspberryPi
 
 ## Section 0 - PreReqs & Considerations
 
-The following guide was made with a Raspberry Pi Zero W, which can be bought between $20 and $30 on Amazon. The I Am Responding dashboard is a bit laggy on this equipment when you have scrolling involved, but otherwise does a pretty good job. You will also need an microSD card of 8gigs or more, and the right stuff to connect up your RaspberryPi to a monitor (HDMI Cable). 
-
-**UPDATE**: It is *heavily* suggested that a Raspberry Pi 3 or higher is used. Unfortunately, the Pi Zero W is annoyingly laggy, and does a relatively poor job keeping up with the new javascript-heavy version of the dashboard. 
+The following guide was made with a Raspberry Pi 3 Model B, which can be bought fully kitted out [for about 60$ on Amazon](https://amzn.to/36shI73). (Unfortunately, the Pi Zero W is annoyingly laggy, and does a relatively poor job keeping up with the new javascript-heavy version of the dashboard.) You will also need a [microSD card of 8gigs or more](https://amzn.to/2Zw8tS0) which will run you about 6$, and the right stuff to connect up your RaspberryPi to a monitor (HDMI Cable). 
 
 ## Section 1 - Installing Raspbian on your RaspberryPi
 
-[Download and Install Raspbian on your RaspberryPi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up)
+[Download and Install Raspbian on your RaspberryPi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up).
 
 Upon first boot, select and install Raspbian Desktop
 
@@ -30,7 +28,8 @@ Either via the terminal on the RaspberryPi or SSH, we need to set some stuff up.
 
     sudo apt install -y matchbox-window-manager nodm
 
-Set up nodm
+**Set up nodm**
+
 Edit /etc/default/nodm with your favorite text editor, or use nano:
 
     sudo nano /etc/default/nodm
@@ -46,7 +45,7 @@ Please note that if you changed your username from 'pi' during setup, you'll nee
 
 Next, we need to tell the Raspberry Pi to launch the browser at boot and disable some of the power settings as this is a non-interactive display board.
 
-To do this, create a new file called '.xsession' in /home/pi (/home/pi/.xsession). Save the following to it: 
+To do this, create a new file called `.xsession` in `/home/pi` (`/home/pi/.xsession`). Save the following to it: 
 
     #!/bin/bash
     xset -dpms     # disable DPMS (Energy Star) features.
@@ -61,7 +60,7 @@ To exit nano [Ctrl]+[x], hitting [y] when asking if it wants you to save.
 
 Disable version checking (for Chromium 78) by creating `/etc/chromium-browser/customizations/01-disable-update-check`:
 
-    CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=31536000"
+    CHROMIUM_FLAGS="${CHROMIUM_FLAGS} --check-for-update-interval=1 --simulate-critical-update "
 
 Create `/etc/chromium-browser/policies/managed/no-updates.json` with the following content to disable auto updates:
 
