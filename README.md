@@ -68,7 +68,7 @@ Create `/etc/chromium-browser/policies/managed/no-updates.json` with the followi
         "DeviceAutoUpdateDisabled": "True"
     }
 
-(Optional): Change the splash screen by modifying `/usr/share/plymouth/themes/pix/splash.png` to have your preferred logo.
+(Optional): Change the splash screen by modifying `/usr/share/plymouth/themes/pix/splash.png` to have your preferred logo. **If you do this, you will need to overwrite this file every time the system updates the plymouth themes package.**
     
 You should now be able to exit and test out your setup by rebooting the machine:
 
